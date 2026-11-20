@@ -24,6 +24,11 @@
 
       visuals.nvim-web-devicons.enable = true;
 
+      statusline.lualine = {
+        enable = true;
+        setupOpts.options.globalstatus = true;
+      };
+
       lsp = {
         enable = true;
         formatOnSave = true;
