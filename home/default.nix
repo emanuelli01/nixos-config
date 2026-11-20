@@ -18,6 +18,7 @@
 
   home.packages = [
     pkgs.fd
+    pkgs.ripgrep
     pkgs.firefox
     pkgs.spotify
     pkgs.nerd-fonts.jetbrains-mono

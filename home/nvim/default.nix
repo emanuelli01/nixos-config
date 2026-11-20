@@ -15,14 +15,16 @@
         providers.wl-copy.enable = true;
       };
 
-      # theme = {
-      #   enable = true;
-      #   name = "tokyonight";
-      #   style = "night"; # storm, moon, day
-      #   transparent = false;
-      # };
+      theme = {
+        enable = true;
+        name = "tokyonight";
+        style = "storm";
+        transparent = false;
+      };
 
       visuals.nvim-web-devicons.enable = true;
+
+      autocomplete.blink-cmp.enable = true;
 
       statusline.lualine = {
         enable = true;
@@ -101,7 +103,7 @@
         {
           key = "<leader>gg";
           mode = "n";
-          action = "<cmd>lua Snacks.lazygit()<CR>";
+          action = "<cmd>lua Snacks.lazygit({ win = { border = 'rounded' } })<CR>";
           desc = "Lazygit";
         }
         {
@@ -115,6 +117,18 @@
           mode = ["n" "t"];
           action = "<cmd>lua Snacks.terminal.toggle(nil, { win = { height = 0.24 } })<CR>";
           desc = "Toggle terminal";
+        }
+        {
+          key = "<leader>ff";
+          mode = "n";
+          action = "<cmd>lua Snacks.picker.files()<CR>";
+          desc = "Find files";
+        }
+        {
+          key = "<leader>fg";
+          mode = "n";
+          action = "<cmd>lua Snacks.picker.grep()<CR>";
+          desc = "Grep";
         }
       ];
     };
