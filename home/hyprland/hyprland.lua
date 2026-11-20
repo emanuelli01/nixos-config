@@ -36,6 +36,8 @@ local browser     = "firefox"
 
 hl.on("hyprland.start", function () 
   hl.exec_cmd("waybar")
+  hl.exec_cmd("awww-daemon")
+  hl.exec_cmd("sleep 1 && waypaper --restore --backend awww")
 end)
 
 
@@ -235,6 +237,7 @@ hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("waypaper"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + minus", hl.dsp.layout("togglesplit"))    -- dwindle only
 
@@ -340,4 +343,15 @@ hl.window_rule({
 
     move  = "20 monitor_h-120",
     float = true,
+})
+
+-- Waypaper as a translucent floating overlay
+hl.window_rule({
+    name  = "waypaper-overlay",
+    match = { class = "^waypaper$" },
+
+    float   = true,
+    center  = true,
+    size    = "900 600",
+    opacity = "0.85",
 })

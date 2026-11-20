@@ -3,9 +3,11 @@
 
   # Programs used by the binds in hyprland.lua
   home.packages = [
-    pkgs.brightnessctl # XF86MonBrightness*
-    pkgs.playerctl # XF86Audio{Play,Pause,Next,Prev}
-    pkgs.nautilus # SUPER+E
-    pkgs.hyprshot # Print
+    pkgs.brightnessctl
+    pkgs.playerctl
+    pkgs.nautilus
+    pkgs.hyprshot
+    pkgs.awww # wallpaper daemon
+    pkgs.waypaper # wallpaper picker GUI
   ];
 }
