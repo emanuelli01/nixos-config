@@ -27,6 +27,7 @@
   ];
 
   programs.hyprland.enable = true;
+  programs.hyprlock.enable = true;
 
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia = {
